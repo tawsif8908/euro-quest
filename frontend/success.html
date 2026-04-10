@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | EuroQuest Recruitment Agency</title>
+    <title>Success Stories | EuroQuest Recruitment Agency</title>
 
-    <!-- Tailwind CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom CSS -->
@@ -62,148 +62,122 @@ document.addEventListener("DOMContentLoaded", () => {
         <nav class="hidden md:flex space-x-6 text-lg font-medium">
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="services.html" class="nav-link text-blue-600 font-bold">Services</a>
+            <a href="services.html" class="nav-link">Services</a>
             <a href="jobs.html" class="nav-link">Jobs</a>
-            <a href="success.html" class="nav-link">Success</a>
+            <a href="success.html" class="nav-link text-blue-600 font-bold">Success</a>
             <a href="blog.html" class="nav-link">Blog</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
     </div>
 </header>
 
-<!-- ✅ NAV STYLE -->
+<!-- ✅ NAV-LINK STYLE -->
 <style>
-.nav-link {
-    position: relative;
-    transition: all .3s;
-}
+.nav-link { position: relative; transition: all .3s; }
 .nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 3px;
-    left: 0;
-    bottom: -3px;
-    background: #2563eb;
-    transition: .3s;
+    content: ""; width: 0; height: 3px; background: #2563eb;
+    position: absolute; left: 0; bottom: -3px; transition: .3s;
 }
-.nav-link:hover::after {
-    width: 100%;
-}
-.nav-link:hover {
-    color: #2563eb;
-}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: #2563eb; }
 </style>
 
-<!-- ✅ HERO SECTION -->
+<!-- ✅ PAGE HERO -->
 <section class="pt-32 pb-20 bg-blue-600 text-white text-center">
-    <h2 class="text-4xl md:text-5xl font-extrabold">Recruitment Services</h2>
+    <h2 class="text-4xl md:text-5xl font-extrabold">Success Stories</h2>
     <p class="mt-4 text-lg opacity-90 max-w-2xl mx-auto">
-        Skilled manpower sourcing for European employers — efficient, ethical, and professional.
+        Real stories, real achievements — the journeys of workers who trusted EuroQuest.
     </p>
 </section>
 
+<!-- ✅ SECTION 1 — YOUTUBE SUCCESS VIDEO -->
+<section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold mb-6">Watch Our Success Story</h3>
+        <p class="text-gray-700 mb-10">A glimpse into the real experiences of people we've helped build a better future.</p>
 
-<!-- ✅ INTRO SECTION -->
-<section class="py-16 bg-gray-100 text-center">
-    <h3 class="text-3xl font-bold">Excellent Recruitment Solutions</h3>
-    <p class="mt-4 max-w-3xl mx-auto text-gray-700">
-        We support European companies by providing qualified skilled and unskilled employees 
-        from Bangladesh. Our recruitment team ensures a smooth hiring process, from screening 
-        and documentation to visa and travel arrangements.
-    </p>
-</section>
-
-
-<!-- ✅ SERVICES GRID -->
-<section class="py-16">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-
-        <!-- SERVICE CARD -->
-        <div class="service-card">
-            <img src="assets/img/construction.jpg" alt="Construction Workers" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Construction Workers</h4>
-                <p class="text-gray-700 text-sm mb-4">
-                    Skilled and unskilled construction professionals for Romania and Europe.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
+        <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
+            <!-- Replace VIDEO_ID with your YouTube video ID -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="w-full h-full">
+            </iframe>
         </div>
-
-        <div class="service-card">
-            <img src="assets/img/electrician.jpg" alt="Electricians" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Electricians</h4>
-                <p class="text-gray-700 text-sm mb-4">
-                    Qualified industrial and residential electricians with verified experience.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <img src="assets/img/restaurant.jpg" alt="Restaurant Workers" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Restaurant Workers</h4>
-                <p class="text-gray-700 text-sm mb-4">
-                    Waiters, chefs, kitchen helpers, and hotel staff for hospitality industries.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <img src="assets/img/garments.jpg" alt="Garments Workers" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Garments Workers</h4>
-                <p class="text-gray-700 text-sm mb-4">
-                    Skilled clothing and industrial production line workers for factories.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <img src="assets/img/nurse.jpg" alt="Nurses & Medical Staff" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Nurses & Medical Staff</h4>
-                <p class="text-gray-700 text-sm mb-4">
-                    Professionally trained nurses and assistants for medical institutes.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <img src="assets/img/plumber.jpg" alt="Plumbers" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Plumbers</h4>
-                <p class="text-gray-700 text-sm mb-4">
-                    Reliable plumbing professionals for European residential and commercial work.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
     </div>
 </section>
 
-<!-- ✅ SERVICE CARD STYLE -->
-<style>
-.service-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: .3s;
-}
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-</style>
+<!-- ✅ SECTION 2 — TESTIMONIAL SLIDER -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold">What Our Clients Say</h3>
+        <p class="text-gray-700 mt-3 mb-10">Satisfied clients share their experiences working with EuroQuest.</p>
 
+        <!-- ✅ Slider Container -->
+        <div class="relative w-full overflow-hidden" id="slider-box">
+
+            <div class="flex transition-all duration-700" id="slider">
+
+                <!-- ✅ Slide 1 -->
+                <div class="min-w-full px-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
+                        <img src="assets/img/testimonial1.png" alt="Testimonial 1" class="w-16 h-16 rounded-full mx-auto">
+                        <p class="mt-6 text-gray-700 text-lg">
+                            “Thanks to EuroQuest, I got my job in Romania smoothly. They guided me with the full process!”
+                        </p>
+                        <h4 class="mt-4 font-bold text-blue-600">— Client from Bangladesh</h4>
+                    </div>
+                </div>
+
+                <!-- ✅ Slide 2 -->
+                <div class="min-w-full px-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
+                        <img src="assets/img/testimonial2.png" alt="Testimonial 2" class="w-16 h-16 rounded-full mx-auto">
+                        <p class="mt-6 text-gray-700 text-lg">
+                            “Very good agency. Visa processing was fast. Highly recommended!”
+                        </p>
+                        <h4 class="mt-4 font-bold text-blue-600">— Worker sent to Romania</h4>
+                    </div>
+                </div>
+
+                <!-- ✅ Slide 3 -->
+                <div class="min-w-full px-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
+                        <img src="assets/img/testimonial3.png" alt="Testimonial 3" class="w-16 h-16 rounded-full mx-auto">
+                        <p class="mt-6 text-gray-700 text-lg">
+                            “Trustworthy people. They helped me get a factory job abroad with no hassle.”
+                        </p>
+                        <h4 class="mt-4 font-bold text-blue-600">— Client from Dhaka</h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ✅ Slider Controls -->
+            <div class="mt-8 flex justify-center space-x-4">
+                <button class="w-4 h-4 bg-blue-600 rounded-full" id="btn0" onclick="goToSlide(0)"></button>
+                <button class="w-4 h-4 bg-gray-400 rounded-full" id="btn1" onclick="goToSlide(1)"></button>
+                <button class="w-4 h-4 bg-gray-400 rounded-full" id="btn2" onclick="goToSlide(2)"></button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ✅ SLIDER JS -->
+<script>
+let currentSlide = 0;
+const buttons = document.querySelectorAll('#slider-box button');
+function goToSlide(n) {
+    currentSlide = n;
+    document.getElementById('slider').style.transform = `translateX(-${n * 100}%)`;
+    buttons.forEach((btn, index) => {
+        btn.classList.toggle('bg-blue-600', index === n);
+        btn.classList.toggle('bg-gray-400', index !== n);
+    });
+}
+</script>
 
 <!-- ✅ FOOTER -->
 <footer class="bg-gray-900 text-gray-300 py-10">

@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | EuroQuest Recruitment Agency</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+<style>
+/* Smooth fade-in */
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+body.loaded {
+    opacity: 1;
+}
+
+/* Fade-out on page leave */
+a {
+    transition: opacity 0.3s ease;
+}
+a.fade-link {
+    cursor: pointer;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            const url = this.getAttribute("href");
+            if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
+                e.preventDefault();
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300);
+            }
+        });
+    });
+});
+</script>
+
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ✅ NAVBAR (same as homepage) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <h1 class="text-2xl font-bold tracking-tight">EuroQuest</h1>
+
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link text-blue-600">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="jobs.html" class="nav-link">Jobs</a>
+            <a href="success.html" class="nav-link">Success</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ✅ NAV LINK STYLE -->
+<style>
+.nav-link {
+    position: relative;
+    transition: all .3s;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -3px;
+    background: #2563eb;
+    transition: .3s;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+.nav-link:hover {
+    color: #2563eb;
+}
+</style>
+
+<!-- ✅ HERO SECTION -->
+<section class="pt-32 pb-20 bg-blue-600 text-white text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold">About EuroQuest</h2>
+    <p class="mt-4 text-lg max-w-3xl mx-auto">
+        Your trusted bridge between Bangladesh and Europe — building careers, empowering families, and 
+        supporting European employers with skilled manpower.
+    </p>
+</section>
+
+<!-- ✅ COMPANY STORY -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+            <h3 class="text-3xl font-bold mb-4">Who We Are</h3>
+            <p class="text-gray-700 leading-relaxed">
+                EuroQuest is a professional manpower recruitment agency connecting skilled workers
+                from Bangladesh to European countries such as Romania, Moldova, Cyprus, and beyond.
+                With years of experience in the recruitment industry, we ensure that both job seekers 
+                and employers experience a smooth and transparent hiring process.
+            </p>
+            <p class="text-gray-700 mt-4 leading-relaxed">
+                We focus on ethical recruitment, proper document processing, visa support, travel assistance,
+                and complete end‑to‑end manpower solutions.
+            </p>
+        </div>
+
+        <div>
+            <img src="assets/img/about.jpg" class="rounded-xl shadow-lg" alt="About EuroQuest">
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ CEO MESSAGE -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <h3 class="text-3xl font-bold">Message from the CEO</h3>
+
+        <div class="bg-white rounded-xl shadow-lg mt-10 p-8 md:p-12">
+            <p class="text-gray-700 text-lg leading-relaxed">
+                “At EuroQuest, our mission is simple — connect talented individuals with the right opportunities.
+                We understand the dreams of Bangladeshi workers and the needs of European employers.
+                With a committed team operating from Romania, we ensure that every step of the recruitment 
+                process is handled with honesty, transparency, and professionalism.”
+            </p>
+
+            <p class="text-gray-900 font-semibold mt-6 text-xl">— CEO, EuroQuest</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ MISSION & VISION -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <h3 class="text-3xl font-bold">Our Mission & Vision</h3>
+
+        <div class="grid md:grid-cols-2 gap-10 mt-12">
+
+            <div class="mission-card">
+                <h4 class="text-2xl font-bold mb-3 text-blue-600">Mission</h4>
+                <p class="text-gray-700 leading-relaxed">
+                    To provide reliable overseas employment opportunities 
+                    and support individuals in building better futures for their families.
+                </p>
+            </div>
+
+            <div class="mission-card">
+                <h4 class="text-2xl font-bold mb-3 text-blue-600">Vision</h4>
+                <p class="text-gray-700 leading-relaxed">
+                    To become one of the most trusted manpower recruitment agencies, 
+                    connecting Bangladesh with Europe through professional, ethical, 
+                    and high‑quality recruitment services.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ✅ CARD HOVER STYLE -->
+<style>
+.mission-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: .3s;
+}
+.mission-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+</style>
+
+<!-- ✅ WHY CHOOSE US -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h3 class="text-3xl font-bold text-center">Why Choose EuroQuest?</h3>
+
+        <div class="grid md:grid-cols-3 gap-10 mt-12">
+
+            <div class="benefit">
+                <h4 class="text-xl font-bold mb-2">Trusted Recruitment</h4>
+                <p class="text-gray-700">We follow ethical recruitment practices and transparent processes.</p>
+            </div>
+
+            <div class="benefit">
+                <h4 class="text-xl font-bold mb-2">Expert Guidance</h4>
+                <p class="text-gray-700">From documents to visa assistance — we guide you every step.</p>
+            </div>
+
+            <div class="benefit">
+                <h4 class="text-xl font-bold mb-2">European Presence</h4>
+                <p class="text-gray-700">Our CEO and team operate directly from Romania.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+.benefit {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+    cursor:pointer;
+}
+.benefit:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+}
+</style>
+
+<!-- ✅ FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <div>
+            <h4 class="text-xl font-bold mb-3 text-white">EuroQuest</h4>
+            <p>Your trusted manpower recruitment partner.</p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+            <p><a href="services.html" class="hover:text-white">Services</a></p>
+            <p><a href="jobs.html" class="hover:text-white">Jobs</a></p>
+            <p><a href="contact.html" class="hover:text-white">Contact</a></p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-3">Contact</h4>
+            <p>Romania Office</p>
+            <p>Email: info@euroquest.com</p>
+            <p>Phone: +40 123 456 789</p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>

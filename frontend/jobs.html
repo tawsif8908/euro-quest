@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs | EuroQuest Recruitment Agency</title>
+
+    <!-- Tailwind CSS CDN -->
+    https://cdn.tailwindcss.com
+
+    <!-- Custom CSS -->
+    assets/css/style.css
+    
+<style>
+/* Smooth fade-in */
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+body.loaded {
+    opacity: 1;
+}
+
+/* Fade-out on page leave */
+a {
+    transition: opacity 0.3s ease;
+}
+a.fade-link {
+    cursor: pointer;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            const url = this.getAttribute("href");
+            if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
+                e.preventDefault();
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300);
+            }
+        });
+    });
+});
+</script>
+
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ✅ NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <h1 class="text-2xl font-bold tracking-tight">EuroQuest</h1>
+
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            index.html class="nav-link">Home</a>
+            about.html class="nav-link">About</a>
+            services.html class="nav-link">Services</a>
+            jobs.html class="nav-link text-blue-600 font-bold">Jobs</a>
+            success.html class="nav-link">Success</a>
+            blog.html class="nav-link">Blog</a>
+            contact.html class="nav-link">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ✅ NAV LINK HOVER STYLE -->
+<style>
+.nav-link {
+    position: relative;
+    transition: all .3s;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -3px;
+    background: #2563eb;
+    transition: .3s;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+.nav-link:hover {
+    color: #2563eb;
+}
+</style>
+
+<!-- ✅ HERO SECTION -->
+<section class="pt-32 pb-20 bg-blue-600 text-white text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold">Select Your Ideal Jobs</h2>
+    <p class="mt-4 text-lg opacity-90 max-w-2xl mx-auto">
+        Browse available opportunities in Europe and apply for your future career.
+    </p>
+</section>
+
+<!-- ✅ JOB LISTINGS GRID -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <!-- ✅ JOB CARD TEMPLATE -->
+        <div class="job-card">
+            assets/img/glassworker.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Glass Fabrication Worker</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Job Location:</strong> Croatia</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    Skilled workers required for glass fabrication tasks including measuring, cutting, polishing and assembly.
+                </p>
+                #-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+        <div class="job-card">
+            assets/img/aluminum.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Aluminum Window Fitter</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    Install aluminum window frames and doors for modern buildings. Previous experience required.
+                </p>
+                #
+            </div>
+        </div>
+
+        <div class="job-card">
+            assets/img/seamstress.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Seamstress</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    Experienced sewing machine operators needed for garment manufacturing.
+                </p>
+                #
+            </div>
+        </div>
+
+        <div class="job-card">
+            assets/img/drywall.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Drywall Finisher</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    Apply finishing touches to drywall surfaces. Good technical skills required.
+                </p>
+                #
+            </div>
+        </div>
+
+        <div class="job-card">
+            assets/img/steelfixer.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Steel Fixer</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    Install steel bars and mesh for concrete reinforcement. Hardworking individuals needed.
+                </p>
+                #
+            </div>
+        </div>
+
+        <div class="job-card">
+            assets/img/shuttering.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Shuttering Carpenter</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    Construct formwork molds for concrete structures. Must have prior formwork experience.
+                </p>
+                #
+            </div>
+        </div>
+
+        <div class="job-card">
+            assets/img/mason.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Mason</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Austria</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    Skilled masons needed for bricklaying, plastering, stonework and repair tasks.
+                </p>
+                #
+            </div>
+        </div>
+
+        <div class="job-card">
+            assets/img/painter.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Painter & Decorator</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Austria</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    Professional painters needed for interior & exterior finishing, coating and decoration.
+                </p>
+                #
+            </div>
+        </div>
+
+        <div class="job-card">
+            assets/img/welder.jpg
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Job Title: Welder</h4>
+                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Austria</p>
+                <p class="text-gray-700 text-sm mb-4">
+                    MIG/TIG welders required for metal fabrication and construction tasks.
+                </p>
+                #
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ CARD STYLE -->
+<style>
+.job-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: .3s;
+}
+.job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+</style>
+
+<!-- ✅ FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <div>
+            <h4 class="text-xl font-bold mb-3 text-white">EuroQuest</h4>
+            <p>Your trusted manpower recruitment partner.</p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+            <p>services.html</p>
+            <p>jobs.html</p>
+            <p>contact.html</p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-3">Contact</h4>
+            <p>Romania Office</p>
+            <p>Email: info@euroquest.com</p>
+            <p>Phone: +40 123 456 789</p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | EuroQuest Recruitment Agency</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    
+<style>
+/* Smooth fade-in */
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+body.loaded {
+    opacity: 1;
+}
+
+/* Fade-out on page leave */
+a {
+    transition: opacity 0.3s ease;
+}
+a.fade-link {
+    cursor: pointer;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            const url = this.getAttribute("href");
+            if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
+                e.preventDefault();
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300);
+            }
+        });
+    });
+});
+</script>
+
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ✅ NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <h1 class="text-2xl font-bold tracking-tight">EuroQuest</h1>
+
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="jobs.html" class="nav-link">Jobs</a>
+            <a href="success.html" class="nav-link">Success</a>
+            <a href="blog.html" class="nav-link text-blue-600 font-bold">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ✅ NAVBAR STYLE -->
+<style>
+.nav-link {
+    position: relative;
+    transition: .3s;
+}
+.nav-link::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0;
+    height:3px;
+    background:#2563eb;
+    transition:.3s;
+}
+.nav-link:hover::after { width:100%; }
+.nav-link:hover { color:#2563eb; }
+</style>
+
+<!-- ✅ HERO SECTION -->
+<section class="pt-32 pb-20 bg-blue-600 text-white text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold">News, Updates & Information</h2>
+    <p class="mt-4 text-lg opacity-95 max-w-2xl mx-auto">
+        Stay informed about EuroQuest’s latest announcements, recruitment updates, and mission progress.
+    </p>
+</section>
+
+<!-- ✅ INTRO SECTION -->
+<section class="py-14 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center px-6">
+        <h3 class="text-2xl font-bold mb-3">Latest From EuroQuest</h3>
+        <p class="text-gray-700">
+            Explore important updates about international recruitment, new job openings, 
+            agency achievements, and important notices for workers and employers.
+        </p>
+    </div>
+</section>
+
+<!-- ✅ BLOG GRID SECTION -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <!-- ✅ BLOG CARD -->
+        <div class="blog-card">
+            <img src="assets/img/blog1.jpg" class="w-full h-52 object-cover" alt="">
+            <div class="p-6">
+                <p class="text-sm text-blue-600 font-semibold">March 2026</p>
+                <h4 class="text-xl font-bold mt-2">New Job Opportunities in Romania Released</h4>
+                <p class="text-gray-700 text-sm mt-3 mb-4">
+                    EuroQuest announces multiple new job positions for skilled and unskilled workers. 
+                    Apply now before the quota fills.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="assets/img/blog2.jpg" class="w-full h-52 object-cover" alt="">
+            <div class="p-6">
+                <p class="text-sm text-blue-600 font-semibold">February 2026</p>
+                <h4 class="text-xl font-bold mt-2">EuroQuest Expands Recruitment Support in Moldova</h4>
+                <p class="text-gray-700 text-sm mt-3 mb-4">
+                    Our agency now partners with new industries in Moldova to provide more opportunities for Bangladeshi workers.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="assets/img/blog3.jpg" class="w-full h-52 object-cover" alt="">
+            <div class="p-6">
+                <p class="text-sm text-blue-600 font-semibold">January 2026</p>
+                <h4 class="text-xl font-bold mt-2">Important Visa Processing Updates</h4>
+                <p class="text-gray-700 text-sm mt-3 mb-4">
+                    New regulations introduced by European immigration require updated documentation from applicants.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ BLOG CARD STYLE -->
+<style>
+.blog-card {
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+.blog-card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,0.18);
+}
+</style>
+
+<!-- ✅ FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+        <div>
+            <h4 class="text-xl font-bold mb-3 text-white">EuroQuest</h4>
+            <p>Your trusted manpower recruitment partner.</p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+            <p><a href="services.html" class="hover:text-white">Services</a></p>
+            <p><a href="jobs.html" class="hover:text-white">Jobs</a></p>
+            <p><a href="contact.html" class="hover:text-white">Contact</a></p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-3">Contact</h4>
+            <p>Romania Office</p>
+            <p>Email: info@euroquest.com</p>
+            <p>Phone: +40 123 456 789</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

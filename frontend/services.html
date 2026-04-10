@@ -1,0 +1,237 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | EuroQuest Recruitment Agency</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+<style>
+/* Smooth fade-in */
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+body.loaded {
+    opacity: 1;
+}
+
+/* Fade-out on page leave */
+a {
+    transition: opacity 0.3s ease;
+}
+a.fade-link {
+    cursor: pointer;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            const url = this.getAttribute("href");
+            if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
+                e.preventDefault();
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300);
+            }
+        });
+    });
+});
+</script>
+
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- ✅ NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <h1 class="text-2xl font-bold tracking-tight">EuroQuest</h1>
+
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link text-blue-600 font-bold">Services</a>
+            <a href="jobs.html" class="nav-link">Jobs</a>
+            <a href="success.html" class="nav-link">Success</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ✅ NAV STYLE -->
+<style>
+.nav-link {
+    position: relative;
+    transition: all .3s;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -3px;
+    background: #2563eb;
+    transition: .3s;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+.nav-link:hover {
+    color: #2563eb;
+}
+</style>
+
+<!-- ✅ HERO SECTION -->
+<section class="pt-32 pb-20 bg-blue-600 text-white text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold">Recruitment Services</h2>
+    <p class="mt-4 text-lg opacity-90 max-w-2xl mx-auto">
+        Skilled manpower sourcing for European employers — efficient, ethical, and professional.
+    </p>
+</section>
+
+
+<!-- ✅ INTRO SECTION -->
+<section class="py-16 bg-gray-100 text-center">
+    <h3 class="text-3xl font-bold">Excellent Recruitment Solutions</h3>
+    <p class="mt-4 max-w-3xl mx-auto text-gray-700">
+        We support European companies by providing qualified skilled and unskilled employees 
+        from Bangladesh. Our recruitment team ensures a smooth hiring process, from screening 
+        and documentation to visa and travel arrangements.
+    </p>
+</section>
+
+
+<!-- ✅ SERVICES GRID -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <!-- SERVICE CARD -->
+        <div class="service-card">
+            <img src="assets/img/construction.jpg" alt="Construction Workers" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Construction Workers</h4>
+                <p class="text-gray-700 text-sm mb-4">
+                    Skilled and unskilled construction professionals for Romania and Europe.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="assets/img/electrician.jpg" alt="Electricians" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Electricians</h4>
+                <p class="text-gray-700 text-sm mb-4">
+                    Qualified industrial and residential electricians with verified experience.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="assets/img/restaurant.jpg" alt="Restaurant Workers" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Restaurant Workers</h4>
+                <p class="text-gray-700 text-sm mb-4">
+                    Waiters, chefs, kitchen helpers, and hotel staff for hospitality industries.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="assets/img/garments.jpg" alt="Garments Workers" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Garments Workers</h4>
+                <p class="text-gray-700 text-sm mb-4">
+                    Skilled clothing and industrial production line workers for factories.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="assets/img/nurse.jpg" alt="Nurses & Medical Staff" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Nurses & Medical Staff</h4>
+                <p class="text-gray-700 text-sm mb-4">
+                    Professionally trained nurses and assistants for medical institutes.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="assets/img/plumber.jpg" alt="Plumbers" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">Plumbers</h4>
+                <p class="text-gray-700 text-sm mb-4">
+                    Reliable plumbing professionals for European residential and commercial work.
+                </p>
+                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ SERVICE CARD STYLE -->
+<style>
+.service-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: .3s;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+</style>
+
+
+<!-- ✅ FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <div>
+            <h4 class="text-xl font-bold mb-3 text-white">EuroQuest</h4>
+            <p>Your trusted manpower recruitment partner.</p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+            <p><a href="services.html">Services</a></p>
+            <p><a href="jobs.html">Jobs</a></p>
+            <p><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-3">Contact</h4>
+            <p>Romania Office</p>
+            <p>Email: info@euroquest.com</p>
+            <p>Phone: +40 123 456 789</p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
+```

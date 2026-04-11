@@ -7,94 +7,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | EuroQuest Recruitment Agency</title>
 
-    <!-- Tailwind CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS (optional) -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
-<style>
-/* Smooth fade-in */
-body {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-body.loaded {
-    opacity: 1;
-}
 
-/* Fade-out on page leave */
-a {
-    transition: opacity 0.3s ease;
-}
-a.fade-link {
-    cursor: pointer;
-}
-</style>
+    <!-- ✅ Smooth Fade Effect -->
+    <style>
+        body { opacity: 0; transition: opacity .6s ease; }
+        body.loaded { opacity: 1; }
+        a { transition: opacity .3s ease; }
+    </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loaded");
-
-    document.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", function (e) {
-            const url = this.getAttribute("href");
-            if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
-                e.preventDefault();
-                document.body.style.opacity = 0;
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 300);
-            }
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+            document.querySelectorAll("a").forEach(a => {
+                a.addEventListener("click", e => {
+                    const url = a.getAttribute("href");
+                    if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+                        e.preventDefault();
+                        document.body.style.opacity = 0;
+                        setTimeout(() => { window.location.href = url }, 300);
+                    }
+                });
+            });
         });
-    });
-});
-</script>
-
+    </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 pt-24">
 
-<!-- ✅ NAVBAR (same as homepage) -->
-<header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+<!-- ✅ NAVBAR START -->
+<header class="fixed top-0 left-0 w-full bg-white shadow z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <h1 class="text-2xl font-bold tracking-tight">EuroQuest</h1>
 
+        <!-- ✅ Logo -->
+        <a href="index.html" class="text-2xl font-bold tracking-tight hover:text-blue-600">
+            EuroQuest
+        </a>
+
+        <!-- ✅ Desktop Menu -->
         <nav class="hidden md:flex space-x-6 text-lg font-medium">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link text-blue-600">About</a>
+            <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
             <a href="jobs.html" class="nav-link">Jobs</a>
             <a href="success.html" class="nav-link">Success</a>
             <a href="blog.html" class="nav-link">Blog</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
+
+        <!-- ✅ Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden text-3xl font-bold">☰</button>
     </div>
+
+    <!-- ✅ Mobile Menu -->
+    <nav id="mobileMenu" class="hidden md:hidden flex flex-col bg-white p-6 space-y-4 text-lg shadow-lg border-t">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="jobs.html" class="nav-link">Jobs</a>
+        <a href="success.html" class="nav-link">Success</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 </header>
 
-<!-- ✅ NAV LINK STYLE -->
+<!-- ✅ Hover underline effect -->
 <style>
 .nav-link {
     position: relative;
-    transition: all .3s;
-}
-.nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 3px;
-    left: 0;
-    bottom: -3px;
-    background: #2563eb;
     transition: .3s;
 }
-.nav-link:hover::after {
-    width: 100%;
+.nav-link::after {
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-3px;
+    background:#2563eb;
+    transition:.3s;
 }
-.nav-link:hover {
-    color: #2563eb;
-}
+.nav-link:hover::after { width:100%; }
+.nav-link:hover { color:#2563eb; }
 </style>
+
+<!-- ✅ Mobile menu JS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+});
+</script>
+<!-- ✅ NAVBAR END -->
+
+
 
 <!-- ✅ HERO SECTION -->
 <section class="pt-32 pb-20 bg-blue-600 text-white text-center">
@@ -105,6 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </p>
 </section>
 
+
+
 <!-- ✅ COMPANY STORY -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -114,11 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="text-gray-700 leading-relaxed">
                 EuroQuest is a professional manpower recruitment agency connecting skilled workers
                 from Bangladesh to European countries such as Romania, Moldova, Cyprus, and beyond.
-                With years of experience in the recruitment industry, we ensure that both job seekers 
-                and employers experience a smooth and transparent hiring process.
+                With years of experience in the recruitment industry, we ensure a smooth and transparent 
+                hiring process for job seekers and employers.
             </p>
             <p class="text-gray-700 mt-4 leading-relaxed">
-                We focus on ethical recruitment, proper document processing, visa support, travel assistance,
+                We focus on ethical recruitment, document processing, visa support, travel assistance,
                 and complete end‑to‑end manpower solutions.
             </p>
         </div>
@@ -130,6 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
+
+
 <!-- ✅ CEO MESSAGE -->
 <section class="py-20 bg-gray-100">
     <div class="max-w-5xl mx-auto px-6 text-center">
@@ -140,8 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="text-gray-700 text-lg leading-relaxed">
                 “At EuroQuest, our mission is simple — connect talented individuals with the right opportunities.
                 We understand the dreams of Bangladeshi workers and the needs of European employers.
-                With a committed team operating from Romania, we ensure that every step of the recruitment 
-                process is handled with honesty, transparency, and professionalism.”
+                With a committed team operating from Romania, we ensure every step is handled with honesty,
+                transparency, and professionalism.”
             </p>
 
             <p class="text-gray-900 font-semibold mt-6 text-xl">— CEO, EuroQuest</p>
@@ -149,6 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     </div>
 </section>
+
+
 
 <!-- ✅ MISSION & VISION -->
 <section class="py-20 bg-white">
@@ -161,17 +180,16 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="mission-card">
                 <h4 class="text-2xl font-bold mb-3 text-blue-600">Mission</h4>
                 <p class="text-gray-700 leading-relaxed">
-                    To provide reliable overseas employment opportunities 
-                    and support individuals in building better futures for their families.
+                    To provide reliable overseas employment opportunities and support individuals in building 
+                    better futures for their families.
                 </p>
             </div>
 
             <div class="mission-card">
                 <h4 class="text-2xl font-bold mb-3 text-blue-600">Vision</h4>
                 <p class="text-gray-700 leading-relaxed">
-                    To become one of the most trusted manpower recruitment agencies, 
-                    connecting Bangladesh with Europe through professional, ethical, 
-                    and high‑quality recruitment services.
+                    To become one of the most trusted manpower recruitment agencies, connecting Bangladesh 
+                    with Europe through ethical and high‑quality recruitment services.
                 </p>
             </div>
 
@@ -179,7 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </section>
 
-<!-- ✅ CARD HOVER STYLE -->
 <style>
 .mission-card {
     background: white;
@@ -193,6 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
     box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
 </style>
+
+
 
 <!-- ✅ WHY CHOOSE US -->
 <section class="py-20 bg-gray-100">
@@ -237,22 +256,30 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 </style>
 
+
+
+
 <!-- ✅ FOOTER -->
 <footer class="bg-gray-900 text-gray-300 py-10">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
 
+        <!-- Column 1 -->
         <div>
             <h4 class="text-xl font-bold mb-3 text-white">EuroQuest</h4>
             <p>Your trusted manpower recruitment partner.</p>
         </div>
 
+        <!-- Column 2 -->
         <div>
-            <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+            <h4 class="font-semibold text-white mb-3">Important Links</h4>
+            <p><a href="faq.html" class="hover:text-white">FAQ</a></p>
+            <p><a href="privacy.html" class="hover:text-white">Privacy Policy</a></p>
             <p><a href="services.html" class="hover:text-white">Services</a></p>
             <p><a href="jobs.html" class="hover:text-white">Jobs</a></p>
             <p><a href="contact.html" class="hover:text-white">Contact</a></p>
         </div>
 
+        <!-- Column 3 -->
         <div>
             <h4 class="font-semibold text-white mb-3">Contact</h4>
             <p>Romania Office</p>
@@ -262,6 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     </div>
 </footer>
+
 
 </body>
 </html>

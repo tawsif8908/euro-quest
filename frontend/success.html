@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,136 +7,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success Stories | EuroQuest Recruitment Agency</title>
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
-<style>
-/* Smooth fade-in */
-body {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-body.loaded {
-    opacity: 1;
-}
 
-/* Fade-out on page leave */
-a {
-    transition: opacity 0.3s ease;
-}
-a.fade-link {
-    cursor: pointer;
-}
-</style>
+    <!-- ✅ Smooth Fade Animations -->
+    <style>
+        body { opacity: 0; transition: opacity .6s ease; }
+        body.loaded { opacity: 1; }
+        a { transition: opacity .3s ease; }
+    </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loaded");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
 
-    document.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", function (e) {
-            const url = this.getAttribute("href");
-            if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
-                e.preventDefault();
-                document.body.style.opacity = 0;
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 300);
-            }
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const url = this.getAttribute("href");
+                    if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
+                        e.preventDefault();
+                        document.body.style.opacity = 0;
+                        setTimeout(() => { window.location.href = url; }, 300);
+                    }
+                });
+            });
         });
-    });
-});
-</script>
-
+    </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 pt-24">
 
 <!-- ✅ NAVBAR -->
-<header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+<header class="fixed top-0 left-0 w-full bg-white shadow z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <h1 class="text-2xl font-bold tracking-tight">EuroQuest</h1>
+        <a href="index.html" class="text-2xl font-bold tracking-tight hover:text-blue-600">
+            EuroQuest
+        </a>
 
         <nav class="hidden md:flex space-x-6 text-lg font-medium">
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
             <a href="jobs.html" class="nav-link">Jobs</a>
-            <a href="success.html" class="nav-link text-blue-600 font-bold">Success</a>
+            <a href="success.html" class="nav-link font-bold text-blue-600">Success</a>
             <a href="blog.html" class="nav-link">Blog</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
+
+        <button id="menuBtn" class="md:hidden text-3xl font-bold">☰</button>
     </div>
+
+    <nav id="mobileMenu" class="hidden md:hidden flex flex-col bg-white p-6 space-y-4 text-lg border-t shadow-lg">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="jobs.html" class="nav-link">Jobs</a>
+        <a href="success.html" class="nav-link text-blue-600 font-bold">Success</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 </header>
 
-<!-- ✅ NAV-LINK STYLE -->
+<!-- ✅ NAVBAR STYLE -->
 <style>
-.nav-link { position: relative; transition: all .3s; }
-.nav-link::after {
-    content: ""; width: 0; height: 3px; background: #2563eb;
-    position: absolute; left: 0; bottom: -3px; transition: .3s;
+.nav-link {
+    position: relative;
+    transition: .3s;
 }
-.nav-link:hover::after { width: 100%; }
-.nav-link:hover { color: #2563eb; }
+.nav-link::after {
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-3px;
+    background:#2563eb;
+    transition:.3s;
+}
+.nav-link:hover::after { width:100%; }
+.nav-link:hover { color:#2563eb; }
 </style>
 
-<!-- ✅ PAGE HERO -->
+<!-- ✅ MOBILE MENU SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("menuBtn").onclick = () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+    };
+});
+</script>
+
+
+
+<!-- ✅ HERO SECTION -->
 <section class="pt-32 pb-20 bg-blue-600 text-white text-center">
     <h2 class="text-4xl md:text-5xl font-extrabold">Success Stories</h2>
     <p class="mt-4 text-lg opacity-90 max-w-2xl mx-auto">
-        Real stories, real achievements — the journeys of workers who trusted EuroQuest.
+        Real stories, real achievements — inspiring journeys of workers who trusted EuroQuest.
     </p>
 </section>
 
-<!-- ✅ SECTION 1 — YOUTUBE SUCCESS VIDEO -->
+
+
+<!-- ✅ SUCCESS STORY VIDEO -->
 <section class="py-20 bg-white">
     <div class="max-w-5xl mx-auto px-6 text-center">
         <h3 class="text-3xl font-bold mb-6">Watch Our Success Story</h3>
-        <p class="text-gray-700 mb-10">A glimpse into the real experiences of people we've helped build a better future.</p>
+        <p class="text-gray-700 mb-10">
+            A look at real experiences from workers building a better future in Europe through EuroQuest.
+        </p>
 
-        <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
-            <!-- Replace VIDEO_ID with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                class="w-full h-full">
-            </iframe>
-        </div>
+        
+<div class="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl">
+    <div class="relative w-full" style="padding-top: 56.25%;">
+        <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            class="absolute top-0 left-0 w-full h-full"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+    </div>
+</div>
+
     </div>
 </section>
 
-<!-- ✅ SECTION 2 — TESTIMONIAL SLIDER -->
+
+
+<!-- ✅ TESTIMONIAL SLIDER -->
 <section class="py-20 bg-gray-100">
     <div class="max-w-6xl mx-auto px-6 text-center">
         <h3 class="text-3xl font-bold">What Our Clients Say</h3>
-        <p class="text-gray-700 mt-3 mb-10">Satisfied clients share their experiences working with EuroQuest.</p>
+        <p class="text-gray-700 mt-3 mb-10">Honest feedback from workers and employers.</p>
 
-        <!-- ✅ Slider Container -->
         <div class="relative w-full overflow-hidden" id="slider-box">
-
             <div class="flex transition-all duration-700" id="slider">
 
                 <!-- ✅ Slide 1 -->
                 <div class="min-w-full px-8">
                     <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
-                        <img src="assets/img/testimonial1.png" alt="Testimonial 1" class="w-16 h-16 rounded-full mx-auto">
+                        <img src="assets/img/testimonial1.png" class="w-16 h-16 rounded-full mx-auto" alt="">
                         <p class="mt-6 text-gray-700 text-lg">
-                            “Thanks to EuroQuest, I got my job in Romania smoothly. They guided me with the full process!”
+                            “Thanks to EuroQuest, I got my job in Romania easily. Very good process!”
                         </p>
-                        <h4 class="mt-4 font-bold text-blue-600">— Client from Bangladesh</h4>
+                        <h4 class="mt-4 font-bold text-blue-600">— Worker from Bangladesh</h4>
                     </div>
                 </div>
 
                 <!-- ✅ Slide 2 -->
                 <div class="min-w-full px-8">
                     <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
-                        <img src="assets/img/testimonial2.png" alt="Testimonial 2" class="w-16 h-16 rounded-full mx-auto">
+                        <img src="assets/img/testimonial2.png" class="w-16 h-16 rounded-full mx-auto" alt="">
                         <p class="mt-6 text-gray-700 text-lg">
-                            “Very good agency. Visa processing was fast. Highly recommended!”
+                            “The visa processing was fast and simple. Highly recommended recruitment agency.”
                         </p>
                         <h4 class="mt-4 font-bold text-blue-600">— Worker sent to Romania</h4>
                     </div>
@@ -144,9 +171,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 <!-- ✅ Slide 3 -->
                 <div class="min-w-full px-8">
                     <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
-                        <img src="assets/img/testimonial3.png" alt="Testimonial 3" class="w-16 h-16 rounded-full mx-auto">
+                        <img src="assets/img/testimonial3.png" class="w-16 h-16 rounded-full mx-auto" alt="">
                         <p class="mt-6 text-gray-700 text-lg">
-                            “Trustworthy people. They helped me get a factory job abroad with no hassle.”
+                            “Trustworthy service. They helped me get a factory job abroad without hassle.”
                         </p>
                         <h4 class="mt-4 font-bold text-blue-600">— Client from Dhaka</h4>
                     </div>
@@ -154,47 +181,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
             </div>
 
-            <!-- ✅ Slider Controls -->
+            <!-- ✅ Slider Buttons -->
             <div class="mt-8 flex justify-center space-x-4">
                 <button class="w-4 h-4 bg-blue-600 rounded-full" id="btn0" onclick="goToSlide(0)"></button>
                 <button class="w-4 h-4 bg-gray-400 rounded-full" id="btn1" onclick="goToSlide(1)"></button>
                 <button class="w-4 h-4 bg-gray-400 rounded-full" id="btn2" onclick="goToSlide(2)"></button>
             </div>
-
         </div>
     </div>
 </section>
 
-<!-- ✅ SLIDER JS -->
+<!-- ✅ Slider Logic -->
 <script>
 let currentSlide = 0;
-const buttons = document.querySelectorAll('#slider-box button');
 function goToSlide(n) {
     currentSlide = n;
-    document.getElementById('slider').style.transform = `translateX(-${n * 100}%)`;
-    buttons.forEach((btn, index) => {
-        btn.classList.toggle('bg-blue-600', index === n);
-        btn.classList.toggle('bg-gray-400', index !== n);
+    document.getElementById("slider").style.transform = `translateX(-${n * 100}%)`;
+    const dots = document.querySelectorAll("#slider-box button");
+    dots.forEach((btn, i) => {
+        btn.classList.toggle("bg-blue-600", i === n);
+        btn.classList.toggle("bg-gray-400", i !== n);
     });
 }
 </script>
+
+
+
 
 <!-- ✅ FOOTER -->
 <footer class="bg-gray-900 text-gray-300 py-10">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
 
+        <!-- Column 1 -->
         <div>
             <h4 class="text-xl font-bold mb-3 text-white">EuroQuest</h4>
             <p>Your trusted manpower recruitment partner.</p>
         </div>
 
+        <!-- Column 2 -->
         <div>
-            <h4 class="font-semibold text-white mb-3">Quick Links</h4>
-            <p><a href="services.html">Services</a></p>
-            <p><a href="jobs.html">Jobs</a></p>
-            <p><a href="contact.html">Contact</a></p>
+            <h4 class="font-semibold text-white mb-3">Important Links</h4>
+            <p><a href="faq.html" class="hover:text-white">FAQ</a></p>
+            <p><a href="privacy.html" class="hover:text-white">Privacy Policy</a></p>
+            <p><a href="services.html" class="hover:text-white">Services</a></p>
+            <p><a href="jobs.html" class="hover:text-white">Jobs</a></p>
+            <p><a href="contact.html" class="hover:text-white">Contact</a></p>
         </div>
 
+        <!-- Column 3 -->
         <div>
             <h4 class="font-semibold text-white mb-3">Contact</h4>
             <p>Romania Office</p>
@@ -204,6 +238,7 @@ function goToSlide(n) {
 
     </div>
 </footer>
+
 
 </body>
 </html>

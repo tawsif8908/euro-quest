@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,113 +7,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobs | EuroQuest Recruitment Agency</title>
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS (optional) -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
-<style>
-/* Smooth fade-in */
-body {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-body.loaded {
-    opacity: 1;
-}
 
-/* Fade-out on page leave */
-a {
-    transition: opacity 0.3s ease;
-}
-a.fade-link {
-    cursor: pointer;
-}
-</style>
+    <!-- ✅ Smooth fade-in + page transitions -->
+    <style>
+        body { opacity: 0; transition: opacity .6s ease; }
+        body.loaded { opacity: 1; }
+        a { transition: opacity .3s ease; }
+    </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loaded");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
 
-    document.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", function (e) {
-            const url = this.getAttribute("href");
-            if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
-                e.preventDefault();
-                document.body.style.opacity = 0;
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 300);
-            }
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (e) {
+                    const url = this.getAttribute("href");
+                    if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
+                        e.preventDefault();
+                        document.body.style.opacity = 0;
+                        setTimeout(() => { window.location.href = url; }, 300);
+                    }
+                });
+            });
         });
-    });
-});
-</script>
+    </script>
 
 </head>
 
-<body class="bg-gray-50 text-gray-900">
 
-<!-- ✅ NAVBAR -->
-<header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
+<body class="bg-gray-50 text-gray-900 pt-24">
+
+<!-- ✅ NAVBAR START -->
+<header class="fixed top-0 left-0 w-full bg-white shadow z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <h1 class="text-2xl font-bold tracking-tight">EuroQuest</h1>
 
+        <!-- ✅ Logo -->
+        <a href="index.html" class="text-2xl font-bold tracking-tight hover:text-blue-600">
+            EuroQuest
+        </a>
+
+        <!-- ✅ Desktop Menu -->
         <nav class="hidden md:flex space-x-6 text-lg font-medium">
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
-            <a href="jobs.html" class="nav-link text-blue-600 font-bold">Jobs</a>
+            <a href="jobs.html" class="nav-link font-bold text-blue-600">Jobs</a>
             <a href="success.html" class="nav-link">Success</a>
             <a href="blog.html" class="nav-link">Blog</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
+
+        <!-- ✅ Mobile Button -->
+        <button id="menuBtn" class="md:hidden text-3xl font-bold">☰</button>
     </div>
+
+    <!-- ✅ Mobile Dropdown -->
+    <nav id="mobileMenu" class="hidden md:hidden flex flex-col bg-white p-6 space-y-4 text-lg border-t shadow-lg">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="jobs.html" class="nav-link font-bold text-blue-600">Jobs</a>
+        <a href="success.html" class="nav-link">Success</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 </header>
 
-<!-- ✅ NAV LINK HOVER STYLE -->
+<!-- ✅ NAV LINKS Hover Effect -->
 <style>
 .nav-link {
     position: relative;
-    transition: all .3s;
+    transition: .3s;
 }
 .nav-link::after {
     content: "";
     position: absolute;
     width: 0;
-    height: 3px;
+    height: 2px;
     left: 0;
     bottom: -3px;
     background: #2563eb;
     transition: .3s;
 }
-.nav-link:hover::after {
-    width: 100%;
-}
-.nav-link:hover {
-    color: #2563eb;
-}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: #2563eb; }
 </style>
+
+<!-- ✅ Mobile Menu Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+});
+</script>
+<!-- ✅ NAVBAR END -->
+
+
 
 <!-- ✅ HERO SECTION -->
 <section class="pt-32 pb-20 bg-blue-600 text-white text-center">
     <h2 class="text-4xl md:text-5xl font-extrabold">Select Your Ideal Jobs</h2>
     <p class="mt-4 text-lg opacity-90 max-w-2xl mx-auto">
-        Browse available opportunities in Europe and apply for your future career.
+        Browse available opportunities in Europe and start building your future career.
     </p>
 </section>
+
+
 
 <!-- ✅ JOB LISTINGS GRID -->
 <section class="py-16">
     <div id="job-list" class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
         <div class="col-span-3 text-center text-gray-500" id="jobs-loading">
-            Loading jobs from the backend...
+            Loading jobs from backend...
         </div>
     </div>
 </section>
 
-<!-- ✅ CARD STYLE -->
+<!-- ✅ JOB CARD STYLE -->
 <style>
 .job-card {
     background: white;
@@ -127,22 +147,30 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 </style>
 
+
+
+
 <!-- ✅ FOOTER -->
 <footer class="bg-gray-900 text-gray-300 py-10">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
 
+        <!-- Column 1 -->
         <div>
             <h4 class="text-xl font-bold mb-3 text-white">EuroQuest</h4>
             <p>Your trusted manpower recruitment partner.</p>
         </div>
 
+        <!-- Column 2 -->
         <div>
-            <h4 class="font-semibold text-white mb-3">Quick Links</h4>
-            <p><a href="services.html">Services</a></p>
-            <p><a href="jobs.html">Jobs</a></p>
-            <p><a href="contact.html">Contact</a></p>
+            <h4 class="font-semibold text-white mb-3">Important Links</h4>
+            <p><a href="faq.html" class="hover:text-white">FAQ</a></p>
+            <p><a href="privacy.html" class="hover:text-white">Privacy Policy</a></p>
+            <p><a href="services.html" class="hover:text-white">Services</a></p>
+            <p><a href="jobs.html" class="hover:text-white">Jobs</a></p>
+            <p><a href="contact.html" class="hover:text-white">Contact</a></p>
         </div>
 
+        <!-- Column 3 -->
         <div>
             <h4 class="font-semibold text-white mb-3">Contact</h4>
             <p>Romania Office</p>
@@ -153,41 +181,38 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </footer>
 
+
+
+
+<!-- ✅ LOAD JOBS FROM BACKEND -->
 <script src="api.js"></script>
+
 <script>
-    async function renderJobCards() {
-        const jobList = document.getElementById('job-list');
-        const loading = document.getElementById('jobs-loading');
+async function renderJobCards() {
+    const jobList = document.getElementById('job-list');
+    const loading = document.getElementById('jobs-loading');
 
-        try {
-            const response = await window.API.loadJobs();
-            if (!response || !Array.isArray(response)) {
-                throw new Error('No jobs returned from backend');
-            }
+    try {
+        const response = await window.API.loadJobs();
 
-            loading.remove();
-            jobList.innerHTML = response.map(job => {
-                const salary = job.salary ? `Salary: ${job.salary.currency || ''} ${job.salary.min || ''}${job.salary.max ? ' - ' + job.salary.max : ''} ${job.salary.period || ''}` : '';
-                return `
-                    <div class="job-card">
-                        <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-500">Job image</div>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold mb-2">${job.title}</h4>
-                            <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> ${job.location || 'N/A'}</p>
-                            <p class="text-gray-700 text-sm mb-4">${job.category || 'No description available.'}</p>
-                            <p class="text-sm text-gray-500 mb-4">${salary}</p>
-                            <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        } catch (error) {
-            loading.textContent = 'Unable to load jobs. Please check the backend server.';
-            console.error('Job loading error:', error);
+        if (!response || !Array.isArray(response)) {
+            throw new Error('Invalid data');
         }
-    }
 
-    document.addEventListener('DOMContentLoaded', renderJobCards);
-</script>
-</body>
-</html>
+        loading.remove();
+
+        jobList.innerHTML = response.map(job => {
+            const salary = job.salary 
+                ? `Salary: ${job.salary.currency || ''} ${job.salary.min || ''}${job.salary.max ? ' - ' + job.salary.max : ''} ${job.salary.period || ''}`
+                : 'Salary: N/A';
+
+            return `
+                <div class="job-card">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-500">Job Image</div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">${job.title}</h4>
+                        <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> ${job.location || 'N/A'}</p>
+                        <p class="text-gray-700 text-sm mb-4">${job.category || 'No description available.'}</p>
+                        <p class="text-sm text-gray-500 mb-4">${salary}</p>
+                        <a href="#" class="text
+-blue-600 font-semibold hover:underline">Read More →</a>

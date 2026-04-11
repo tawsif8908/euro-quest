@@ -7,24 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy | EuroQuest Recruitment Agency</title>
 
-    <!-- TailwindCSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- ✅ SMOOTH PAGE TRANSITIONS -->
+    <!-- ✅ Smooth Fade Page Transition -->
     <style>
-        body {
-            opacity: 0;
-            transition: opacity 0.6s ease;
-        }
-        body.loaded {
-            opacity: 1;
-        }
-        a {
-            transition: opacity 0.3s ease;
-        }
+        body { opacity: 0; transition: opacity .6s ease; }
+        body.loaded { opacity: 1; }
+        a { transition: opacity .3s ease; }
     </style>
 
     <script>
@@ -37,22 +30,26 @@
                     if (url && !url.startsWith("#") && !url.startsWith("javascript")) {
                         e.preventDefault();
                         document.body.style.opacity = "0";
-                        setTimeout(() => (window.location.href = url), 300);
+                        setTimeout(() => window.location.href = url, 300);
                     }
                 });
             });
         });
     </script>
-
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-900 pt-24">
 
-<!-- ✅ NAVBAR -->
+<!-- ✅ NAVBAR START -->
 <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">EuroQuest</h1>
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
+        <!-- ✅ Logo -->
+        <a href="index.html" class="text-2xl font-bold tracking-tight hover:text-blue-600">
+            EuroQuest
+        </a>
+
+        <!-- ✅ Desktop Menu -->
         <nav class="hidden md:flex space-x-6 text-lg font-medium">
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
@@ -62,40 +59,64 @@
             <a href="blog.html" class="nav-link">Blog</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
+
+        <!-- ✅ Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden text-3xl font-bold">☰</button>
     </div>
+
+    <!-- ✅ Mobile Dropdown -->
+    <nav id="mobileMenu" class="hidden md:hidden flex flex-col bg-white p-6 space-y-4 text-lg border-t shadow-lg">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="jobs.html" class="nav-link">Jobs</a>
+        <a href="success.html" class="nav-link">Success</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 </header>
 
-<!-- ✅ NAV STYLES -->
+<!-- ✅ NAVBAR HOVER STYLE -->
 <style>
-    .nav-link {
-        position: relative;
-        transition: 0.3s;
-    }
-    .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 3px;
-        bottom: -4px;
-        left: 0;
-        background: #2563eb;
-        transition: 0.3s;
-    }
-    .nav-link:hover::after {
-        width: 100%;
-    }
-    .nav-link:hover {
-        color: #2563eb;
-    }
+.nav-link {
+    position: relative;
+    transition: .3s;
+}
+.nav-link::after {
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-3px;
+    background:#2563eb;
+    transition:.3s;
+}
+.nav-link:hover::after { width:100%; }
+.nav-link:hover { color:#2563eb; }
 </style>
+
+<!-- ✅ Mobile Menu Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("menuBtn").onclick = () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+    };
+});
+</script>
+<!-- ✅ NAVBAR END -->
+
+
 
 <!-- ✅ HERO -->
 <section class="pt-32 pb-20 bg-blue-600 text-white text-center">
     <h2 class="text-4xl md:text-5xl font-extrabold">Privacy Policy</h2>
     <p class="mt-4 text-lg opacity-90 max-w-2xl mx-auto">
-        Learn how EuroQuest collects, uses, and protects your personal information.
+        How EuroQuest collects, uses, and protects your personal information.
     </p>
 </section>
+
+
 
 <!-- ✅ PRIVACY POLICY CONTENT -->
 <section class="py-20">
@@ -103,70 +124,64 @@
 
         <h3 class="text-3xl font-bold mb-6">Introduction</h3>
         <p class="text-gray-700 mb-6 leading-relaxed">
-            At EuroQuest Recruitment Agency, we are committed to protecting the privacy and confidentiality 
-            of all individuals who interact with our services. This Privacy Policy outlines how we collect, 
-            use, and safeguard your personal information when you apply for jobs, contact us, or browse our website.
+            EuroQuest Recruitment Agency values your privacy and is committed to protecting your personal data.
+            This Privacy Policy explains how we collect, process, and safeguard your information.
         </p>
 
         <h3 class="text-2xl font-bold mt-10 mb-4">1. Information We Collect</h3>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-            We may collect personal information including, but not limited to:
-        </p>
-        <ul class="list-disc ml-8 text-gray-700 mb-6">
+        <ul class="list-disc ml-8 text-gray-700 mb-6 leading-relaxed">
             <li>Full name</li>
             <li>Email address</li>
             <li>Phone number</li>
-            <li>CV/Resume and documents</li>
-            <li>Passport and identification documents</li>
-            <li>Job preferences and work history</li>
+            <li>CV/Resume documents</li>
+            <li>Passport and ID details</li>
+            <li>Job preferences & work history</li>
         </ul>
 
         <h3 class="text-2xl font-bold mt-10 mb-4">2. How We Use Your Information</h3>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-            Your data may be used for the following purposes:
-        </p>
-        <ul class="list-disc ml-8 text-gray-700 mb-6">
-            <li>Processing job applications</li>
-            <li>Communicating with you</li>
+        <ul class="list-disc ml-8 text-gray-700 mb-6 leading-relaxed">
+            <li>Processing your job applications</li>
             <li>Verifying documents for overseas placement</li>
-            <li>Coordinating with partner employers</li>
-            <li>Internal record keeping</li>
+            <li>Coordinating with employers and partners</li>
+            <li>Responding to your inquiries</li>
+            <li>Improving our agency services</li>
         </ul>
 
-        <h3 class="text-2xl font-bold mt-10 mb-4">3. Data Protection</h3>
-        <p class="text-gray-700 mb-6 leading-relaxed">
-            We implement strict administrative, technical, and physical security measures 
-            to safeguard personal information against unauthorized access, disclosure, loss, or misuse.
+        <h3 class="text-2xl font-bold mt-10 mb-4">3. Data Protection Measures</h3>
+        <p class="text-gray-700 leading-relaxed mb-6">
+            We use secure servers, encryption, and strict administrative controls to prevent unauthorized access,
+            disclosure, or misuse of personal data.
         </p>
 
         <h3 class="text-2xl font-bold mt-10 mb-4">4. Sharing of Information</h3>
-        <p class="text-gray-700 mb-6 leading-relaxed">
-            We do not sell or share your personal information with third parties except:
+        <p class="text-gray-700 leading-relaxed mb-4">
+            Your personal data is NEVER sold. It may only be shared with:
         </p>
-        <ul class="list-disc ml-8 text-gray-700 mb-6">
-            <li>Partner employers in Europe (for recruitment purposes)</li>
-            <li>Government authorities when required by law</li>
-            <li>Trusted third‑party service providers assisting our operations</li>
+        <ul class="list-disc ml-8 text-gray-700 mb-6 leading-relaxed">
+            <li>European employers (strictly for job processing)</li>
+            <li>Government authorities (when required by law)</li>
+            <li>Trusted third‑party service providers</li>
         </ul>
 
         <h3 class="text-2xl font-bold mt-10 mb-4">5. Your Rights</h3>
-        <p class="text-gray-700 mb-6 leading-relaxed">
-            You have the right to access, update, or request deletion of your personal information. 
-            You may contact us anytime to exercise these rights.
+        <p class="text-gray-700 leading-relaxed mb-6">
+            You may request access, corrections, or deletion of your personal information anytime.
         </p>
 
-        <h3 class="text-2xl font-bold mt-10 mb-4">6. Changes to This Policy</h3>
-        <p class="text-gray-700 mb-6 leading-relaxed">
-            EuroQuest may update this Privacy Policy periodically. Any updates will be posted on this page.
+        <h3 class="text-2xl font-bold mt-10 mb-4">6. Policy Updates</h3>
+        <p class="text-gray-700 leading-relaxed mb-6">
+            EuroQuest may update this policy periodically. Any changes will be posted here.
         </p>
 
-        <h3 class="text-2xl font-bold mt-10 mb-4">7. Contact Information</h3>
-        <p class="text-gray-700 mb-2">If you have any questions regarding this policy, contact us at:</p>
-        <p class="text-gray-800 font-semibold">Email: info@euroquest.com</p>
-        <p class="text-gray-800 font-semibold">Phone: +40 123 456 789</p>
+        <h3 class="text-2xl font-bold mt-10 mb-4">7. Contact Details</h3>
+        <p class="text-gray-700 leading-relaxed mb-2">For privacy-related requests:</p>
+        <p class="font-semibold text-gray-900">Email: info@euroquest.com</p>
+        <p class="font-semibold text-gray-900">Phone: +40 123 456 789</p>
 
     </div>
 </section>
+
+
 
 <!-- ✅ FOOTER -->
 <footer class="bg-gray-900 text-gray-300 py-10">
@@ -179,8 +194,8 @@
 
         <div>
             <h4 class="font-semibold text-white mb-2">Important Links</h4>
-            <p><a href="faq.html">FAQ</a></p>
-            <p><a href="privacy.html" class="text-white">Privacy Policy</a></p>
+            <p><a href="faq.html" class="hover:text-white">FAQ</a></p>
+            <p><a href="privacy.html" class="hover:text-white font-semibold">Privacy Policy</a></p>
         </div>
 
         <div>

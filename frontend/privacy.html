@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | EuroQuest Recruitment Agency</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Smooth Fade -->
+    <style>
+        body { opacity: 0; transition: opacity .6s ease; }
+        body.loaded { opacity: 1; }
+        a { transition: opacity .3s ease; }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+        });
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 pt-24">
+
+<!-- ✅ CLEAN NAVBAR (NO FAQ / NO PRIVACY HERE) -->
+<header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+        <a href="index.html" class="text-2xl font-bold hover:text-blue-600">EuroQuest</a>
+
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="jobs.html" class="nav-link">Jobs</a>
+            <a href="success.html" class="nav-link">Success</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <button id="menuBtn" class="md:hidden text-3xl font-bold">☰</button>
+    </div>
+
+    <nav id="mobileMenu" class="hidden flex flex-col bg-white p-6 space-y-4 text-lg shadow border-t md:hidden">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="jobs.html" class="nav-link">Jobs</a>
+        <a href="success.html" class="nav-link">Success</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+</header>
+
+<!-- ✅ NAV CSS -->
+<style>
+.nav-link {
+    position: relative;
+    transition: .3s;
+}
+.nav-link::after {
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-3px;
+    background:#2563eb;
+    transition:.3s;
+}
+.nav-link:hover::after { width:100%; }
+.nav-link:hover { color:#2563eb; }
+</style>
+
+<!-- ✅ MOBILE MENU SCRIPT -->
+<script>
+document.getElementById("menuBtn").onclick = () => {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+};
+</script>
+
+
+
+<!-- ✅ HERO -->
+<section class="pt-32 pb-20 bg-blue-600 text-white text-center">
+    <h2 class="text-4xl md:text-5xl font-extrabold">Privacy Policy</h2>
+    <p class="mt-4 text-lg opacity-90 max-w-2xl mx-auto">
+        How EuroQuest collects, uses, and protects your personal information.
+    </p>
+</section>
+
+
+<!-- ✅ PRIVACY CONTENT -->
+<section class="py-20">
+    <div class="max-w-5xl mx-auto px-6 bg-white rounded-xl shadow-lg p-10">
+
+        <h3 class="text-3xl font-bold mb-6">Introduction</h3>
+        <p class="text-gray-700 leading-relaxed mb-6">
+            EuroQuest Recruitment Agency is committed to protecting your personal data and respecting your privacy.
+        </p>
+
+        <h3 class="text-2xl font-bold mt-10 mb-4">1. Information We Collect</h3>
+        <ul class="list-disc ml-8 text-gray-700 leading-relaxed mb-6">
+            <li>Your name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Uploaded documents (CV, passport, certificates)</li>
+            <li>Job preferences</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold mt-10 mb-4">2. How We Use Your Information</h3>
+        <ul class="list-disc ml-8 text-gray-700 leading-relaxed mb-6">
+            <li>Process your job application</li>
+            <li>Communicate with you</li>
+            <li>Verify identity and documents</li>
+            <li>Forward your profile to European employers</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold mt-10 mb-4">3. Data Protection</h3>
+        <p class="text-gray-700 mb-6">
+            We use encrypted systems and strict access controls to protect your data from unauthorized access.
+        </p>
+
+        <h3 class="text-2xl font-bold mt-10 mb-4">4. Information Sharing</h3>
+        <p class="text-gray-700 mb-4">
+            We share your information ONLY with:
+        </p>
+        <ul class="list-disc ml-8 text-gray-700 leading-relaxed mb-6">
+            <li>Verified employers</li>
+            <li>Government authorities (legal purposes)</li>
+            <li>Trusted third‑party service providers</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold mt-10 mb-4">5. Your Rights</h3>
+        <p class="text-gray-700 mb-6">
+            You may request access, correction, or deletion of your information anytime.
+        </p>
+
+        <h3 class="text-2xl font-bold mt-10 mb-4">6. Updates</h3>
+        <p class="text-gray-700 mb-6">
+            Any updates to this privacy policy will be posted on this page.
+        </p>
+
+        <h3 class="text-2xl font-bold mt-10 mb-4">Contact</h3>
+        <p class="text-gray-700 mb-2">Email: <strong>info@euroquest.com</strong></p>
+        <p class="text-gray-700 mb-2">Phone: <strong>+40 123 456 789</strong></p>
+
+    </div>
+</section>
+
+
+
+
+<!-- ✅ FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <div>
+            <h4 class="text-xl font-bold text-white mb-2">EuroQuest</h4>
+            <p>Your trusted manpower recruitment partner.</p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-2">Important Links</h4>
+            <p><a href="faq.html" class="hover:text-white">FAQ</a></p>
+            <p><a href="privacy.html" class="hover:text-white">Privacy Policy</a></p>
+            <p><a href="services.html" class="hover:text-white">Services</a></p>
+            <p><a href="jobs.html" class="hover:text-white">Jobs</a></p>
+            <p><a href="contact.html" class="hover:text-white">Contact</a></p>
+        </div>
+
+        <div>
+            <h4 class="font-semibold text-white mb-2">Contact</h4>
+            <p>Romania Office</p>
+            <p>Email: info@euroquest.com</p>
+            <p>Phone: +40 123 456 789</p>
+        </div>
+
+    </div>
+</footer>
+
+
+</body>
+</html>

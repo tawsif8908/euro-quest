@@ -1,0 +1,66 @@
+
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-white/30 shadow-sm border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <!-- ✅ Clickable Home Button -->
+        index.htmlEuroQuest</a>
+
+        <!-- ✅ Desktop Menu -->
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            about.html class="nav-link">About</a>
+            services.html class="nav-link">Services</a>
+            jobs.htmlGuide</a>
+            success.html class="nav-link">Success</a>
+            blog.html class="nav-link">Blog</a>
+            contact.html class="nav-link">Contact</a>
+        </nav>
+
+        <!-- ✅ Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden text-3xl font-bold">☰</button>
+    </div>
+
+    <!-- ✅ Mobile Menu -->
+    <nav id="mobileMenu" class="hidden md:hidden flex flex-col bg-white/80 backdrop-blur-xl p-6 space-y-4 text-lg shadow-lg">
+        about.html
+        services.html>
+        jobs.htmlGuide</a>
+        success.html"Blog</a>
+        contact.htmlContact</a>
+    </nav>
+</header>
+
+<style>
+.nav-link {
+    position: relative;
+    transition: .3s;
+}
+.nav-link::after {
+    content:"";
+    position:absolute;
+    width:0;
+    height:3px;
+    left:0;
+    bottom:-3px;
+    background:#2563eb;
+    transition:.3s;
+}
+.nav-link:hover::after {
+    width:100%;
+}
+.nav-link:hover {
+    color:#2563eb;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+
+    if(btn){
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    }
+});
+</script>

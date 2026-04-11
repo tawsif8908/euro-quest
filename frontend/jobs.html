@@ -106,117 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- ✅ JOB LISTINGS GRID -->
 <section class="py-16">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-
-        <!-- ✅ JOB CARD TEMPLATE -->
-        <div class="job-card">
-            <img src="assets/img/glassworker.jpg" alt="Glass Fabrication Worker" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Glass Fabrication Worker</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Job Location:</strong> Croatia</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    Skilled workers required for glass fabrication tasks including measuring, cutting, polishing and assembly.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
+    <div id="job-list" class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+        <div class="col-span-3 text-center text-gray-500" id="jobs-loading">
+            Loading jobs from the backend...
         </div>
-
-        <div class="job-card">
-            <img src="assets/img/aluminum.jpg" alt="Aluminum Window Fitter" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Aluminum Window Fitter</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    Install aluminum window frames and doors for modern buildings. Previous experience required.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="assets/img/seamstress.jpg" alt="Seamstress" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Seamstress</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    Experienced sewing machine operators needed for garment manufacturing.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="assets/img/drywall.jpg" alt="Drywall Finisher" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Drywall Finisher</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    Apply finishing touches to drywall surfaces. Good technical skills required.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="assets/img/steelfixer.jpg" alt="Steel Fixer" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Steel Fixer</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    Install steel bars and mesh for concrete reinforcement. Hardworking individuals needed.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="assets/img/shuttering.jpg" alt="Shuttering Carpenter" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Shuttering Carpenter</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Croatia</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    Construct formwork molds for concrete structures. Must have prior formwork experience.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="assets/img/mason.jpg" alt="Mason" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Mason</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Austria</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    Skilled masons needed for bricklaying, plastering, stonework and repair tasks.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="assets/img/painter.jpg" alt="Painter & Decorator" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Painter & Decorator</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Austria</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    Professional painters needed for interior & exterior finishing, coating and decoration.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <img src="assets/img/welder.jpg" alt="Welder" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">Job Title: Welder</h4>
-                <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> Austria</p>
-                <p class="text-gray-700 text-sm mb-4">
-                    MIG/TIG welders required for metal fabrication and construction tasks.
-                </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
-            </div>
-        </div>
-
     </div>
 </section>
 
@@ -261,6 +154,42 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </footer>
 
+<script src="api.js"></script>
+<script>
+    async function renderJobCards() {
+        const jobList = document.getElementById('job-list');
+        const loading = document.getElementById('jobs-loading');
+
+        try {
+            const response = await window.API.loadJobs();
+            if (!response || !Array.isArray(response)) {
+                throw new Error('No jobs returned from backend');
+            }
+
+            loading.remove();
+            jobList.innerHTML = response.map(job => {
+                const salary = job.salary ? `Salary: ${job.salary.currency || ''} ${job.salary.min || ''}${job.salary.max ? ' - ' + job.salary.max : ''} ${job.salary.period || ''}` : '';
+                return `
+                    <div class="job-card">
+                        <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-500">Job image</div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">${job.title}</h4>
+                            <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> ${job.location || 'N/A'}</p>
+                            <p class="text-gray-700 text-sm mb-4">${job.category || 'No description available.'}</p>
+                            <p class="text-sm text-gray-500 mb-4">${salary}</p>
+                            <a href="#" class="text-blue-600 font-semibold hover:underline">Read More →</a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        } catch (error) {
+            loading.textContent = 'Unable to load jobs. Please check the backend server.';
+            console.error('Job loading error:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderJobCards);
+</script>
 </body>
 </html>
 

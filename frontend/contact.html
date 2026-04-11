@@ -129,15 +129,16 @@ document.addEventListener("DOMContentLoaded", () => {
         <div>
             <h3 class="text-3xl font-bold mb-6">Send Us a Message</h3>
 
-            <form class="space-y-5">
-                <input type="text" placeholder="Your Full Name" class="w-full p-3 border rounded-lg">
-                <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg">
-                <input type="text" placeholder="Subject" class="w-full p-3 border rounded-lg">
-                <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg h-32"></textarea>
+            <form id="contact-form" class="space-y-5">
+                <input id="contact-name" name="name" type="text" placeholder="Your Full Name" class="w-full p-3 border rounded-lg" required>
+                <input id="contact-email" name="email" type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" required>
+                <input id="contact-subject" name="subject" type="text" placeholder="Subject" class="w-full p-3 border rounded-lg" required>
+                <textarea id="contact-message" name="message" placeholder="Your Message" class="w-full p-3 border rounded-lg h-32" required></textarea>
 
-                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all">
+                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all">
                     Send Message
                 </button>
+                <p id="contact-status" class="text-sm text-green-600 hidden"></p>
             </form>
         </div>
 
@@ -198,6 +199,37 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </footer>
 
+<script src="api.js"></script>
+<script>
+    const contactForm = document.getElementById('contact-form');
+    const statusMessage = document.getElementById('contact-status');
+
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        statusMessage.classList.add('hidden');
+
+        const contactData = {
+            name: document.getElementById('contact-name').value.trim(),
+            email: document.getElementById('contact-email').value.trim(),
+            subject: document.getElementById('contact-subject').value.trim(),
+            message: document.getElementById('contact-message').value.trim(),
+        };
+
+        const result = await window.API.submitContact(contactData);
+        if (result) {
+            statusMessage.textContent = 'Message sent successfully.';
+            statusMessage.classList.remove('hidden');
+            statusMessage.classList.remove('text-red-600');
+            statusMessage.classList.add('text-green-600');
+            contactForm.reset();
+        } else {
+            statusMessage.textContent = 'Failed to send message. Please try again later.';
+            statusMessage.classList.remove('hidden');
+            statusMessage.classList.remove('text-green-600');
+            statusMessage.classList.add('text-red-600');
+        }
+    });
+</script>
 </body>
 </html>
 

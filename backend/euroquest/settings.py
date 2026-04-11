@@ -138,6 +138,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Alternative dev server
 ]
 
+# Development helper: allow local frontend file access and local dev servers.
+# Remove or tighten this in production.
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_CREDENTIALS = True
 
 # REST Framework settings

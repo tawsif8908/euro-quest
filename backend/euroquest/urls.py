@@ -16,8 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
+
+def api_root(request):
+    return JsonResponse({
+        'message': 'EuroQuest API',
+        'endpoints': {
+            'jobs': '/api/jobs/',
+            'applications': '/api/applications/',
+            'contacts': '/api/contacts/',
+            'blogs': '/api/blogs/',
+        }
+    })
 
 urlpatterns = [
+    path('', api_root, name='api-root'),
     path('admin/', admin.site.urls),
     path('api/', include([
         path('jobs/', include('jobs.urls')),

@@ -12,11 +12,14 @@ async function loadJobs() {
 
     if (response.ok) {
       displayJobs(data);
+      return data;
     } else {
       console.error('Error loading jobs:', data);
+      return null;
     }
   } catch (error) {
     console.error('Network error:', error);
+    return null;
   }
 }
 
